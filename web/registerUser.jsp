@@ -53,7 +53,7 @@
                 connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                 statement = connection.createStatement();
 
-                String sql = "SELECT password,email FROM  register_users where email =" + "'" + email + "'";
+                String sql = "SELECT password,email FROM  register_users where email =" + "'" +  email + "'";
 
                 // String sql = "SELECT * FROM  register_users";
                 resultSet = statement.executeQuery(sql);

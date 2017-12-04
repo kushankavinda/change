@@ -15,19 +15,21 @@
     <body>
 
         <div id="main_container">
-            <div id="header">
-                <div class="top_right">
+            <div id="header" >
+              <!-- <div class="top_right">
                     <div class="languages">
                         <div class="lang_text"><b>Languages</b></div>
                         <a href="#" class="lang"><img src="images/en.gif" alt="" border="0" /></a> <a href="#" class="lang"><img src="images/de.gif" alt="" border="0" /></a> </div> 
                     <div class="big_banner"> <a href="#"><img src="images/banner1.jpg" alt="" border="0" /></a> </div>
-                </div> 
-                <div id="logo"> <a href="#"><img src="images/logo1.png" alt="" border="0" width="182" height="85" /></a> </div>
+                
+                 </div> -->
+              
+           <!-- <div id="logo"> <a href="#"><img src="images/sureson.jpg" alt="" border="0" width="382" height="85" /></a> </div> -->
             </div>
             <div id="main_content">
                 <div id="menu_tab">
                     <ul class="menu">
-                        <li><a href="#" class="nav"> Home </a></li>
+                        <li><a href="#" class="nav"> Home</a></li>
                         <li class="divider"></li>
                         <li><a href="allAdds.jsp" class="nav">All Adds</a></li>
                         <li class="divider"></li>
@@ -49,11 +51,12 @@
                             if ((session.getAttribute("password")) != null) {%>
                         <li class="divider"></li>
                         <li><a href="logOut.jsp" class="nav">Log Out</a></li>
-                            <% } else {%>
+                            <% } else  {%>
                         <li class="divider"></li>
-                        <li><a href="signup.jsp" class="nav">Sign Up</a></li>
-                            <%  }
-                            %>
+                        
+                        <li><a href="newModal.jsp"  class="nav">Sign Up</a></li>
+     
+                            <%}%>
                         <%/*String ad=session.getAttribute("email").toString();
                           String pass=session.getAttribute("password").toString();
                           if(ad.equals("changeAdmin@gmail.com") && pass.equals("admin@123")){
@@ -67,7 +70,7 @@
                     </ul>
                 </div>
                 <!-- end of menu tab -->
-                <div class="crumb_navigation"> Navigation: <span class="current">Home Page</span> </div>
+               <!-- <div class="crumb_navigation"> Navigation: <span class="current">Home Page</span> </div> -->
                 <div class="left_content">
                     <div class="title_box">Categories</div>
                     <ul class="left_menu">
@@ -299,16 +302,14 @@
                         <li class="odd"><a href="#">Central Province</a></li>
                         <li class="even"><a href="#">other province</a></li>
                     </ul>
-                    <div class="banner_adds"> <a href="addPost.jsp"><img src="images/callhere.jpg" alt="no banner" width="160" height="224" border="0" /></a> </div><!-- theere is call to advertise image also-->
+                    <div class="banner_adds"> <a href="addPost.jsp"><img src="images/putadd.jpg" alt="no banner" width="160" height="224" border="0" /></a> </div><!-- theere is call to advertise image also-->
                 </div>
                 <!-- end of right content -->
             </div>
             <!-- end of main content -->
             <div class="footer">
-                <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="42"/> </div>
-                <div class="center_footer"> Template name. All Rights Reserved 2008<br />
-                    <a href="http://csscreme.com"><img src="images/csscreme.jpg" alt="csscreme" title="csscreme" border="0" /></a><br />
-                    <img src="images/payment.gif" alt="" /> </div>
+                <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="35"/> </div>
+                <div class="center_footer"> sureson.lk<br /> </div>
                 <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a> <a href="#">contact us</a> </div>
             </div>
         </div>
