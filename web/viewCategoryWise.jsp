@@ -184,6 +184,21 @@
                     </style>
                     </head>
                     <body>
+                        <%
+       String name = request.getParameter("cat");
+       // out.println(name);
+       String area;
+       if (request.getParameter("area") == null) {
+           area = "all";
+       } else {
+           area = request.getParameter("area");
+       }
+       out.println(area);
+       out.println(name);
+       String id;
+       int a;
+
+                        %>
 
                         <div id="main_container">
                             <!-- The Modal -->
@@ -304,9 +319,9 @@
                                                                 <div class="title_box">Special Products</div>
                                                                 <%try{String s = "SELECT * FROM admimnaddtable";
                                                                 %> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(s);
-    String a = null;
-    while (resultSet.next()) {
-        a = resultSet.getString("post_id");%>
+                                                                                                                                    String a = null;
+                                                                                                                                    while (resultSet.next()) {
+                                                                                                                                        a = resultSet.getString("post_id");%>
 
                                                                 <div class="border_box">
                                                                     <div class="product_title"><a href="viewDetails2.jsp?value=<%=a%>"><%=resultSet.getString("name")%></a></div>
@@ -315,6 +330,10 @@
                                                                     <%}
                                                                         }
                                                                         catch(Exception e
+
+                                                                        
+                                                                        
+
                                                                         
                                                                             ){} %>
                                                                 </div>
@@ -330,24 +349,14 @@
 
                                                                     <%
                                                                         try{
-                                                                              int appro = 0;
-                                                                            int approMin = 0;
-                                                                            //String sql = "SELECT max(approved_id) FROM approvedSpecialAdds";
-                                                                            //select maximun approved id valu from approvedspecilaladds table
-                                                                            String sql = "SELECT MAX(CONVERT(approved_id,UNSIGNED)) as approved_id  FROM approvedspecialadds";
-                                                                            String sqlMin = "SELECT MIN(CONVERT(approved_id,UNSIGNED)) as approved_id  FROM approvedspecialadds";
+                                                                                                                                                                     int approMin = 0;
+                                                                                                                         ovedSpecialAdds";
+                                                                            //select                                                                                                                                  String sql = "SELECT MAX(CONVERT(approved_id,UNSIGNED)) as approved                                                                                                                                              String sqlMin = "SELECT MIN(CONVERT(approved_id,UNSIGNED)) as approved_id  FROM approvedspecialadds";
                                                                             //String sql                             = "SELECT * FROM approvedSpecialadds";
-                                                                    %> <%@include file="viewMoreDetails.jsp"%> <%                                      resultSet = statement.executeQuery(sql);
-    while (resultSet.next()) {
-        appro = Integer.parseInt(resultSet.getString("approved_id"));
-    }
-    //out.println(appro);
-    //select min approved_id from approvedspecialadds
-    resultSet = statement.executeQuery(sqlMin);
-    while (resultSet.next()) {
-        approMin = Integer.parseInt(resultSet.getString("approved_id"));
-    }
-    // out.println(approMin);
+                                                                    %> <%@include file="viewMoreDetails.jsp"%> <%                                      resultSet = statement.executeQuery(          while (resultSet.next()) {
+                     er.parseInt(resultSet.getString("approved_id         }
+                                                                                                       nt.executeQuery(sqlMin);
+                                     approM                                                                     // out.println(approMin);
                                                                     %>
                                                                     <% for (int i = 8; i < appro + 1; i++) {
                                                                             String sqlNew = "SELECT * FROM specialproduct";
@@ -356,9 +365,7 @@
                                                                                 //appro = Integer.parseInt(resultSet.getString("approved_id"));
                                                                                 if (Integer.parseInt(resultSet.getString("post_id")) == i) {
                                                                     %><a href="viewDetails1.jsp?value=<%=i%>"><img src="getImage1.jsp?id=<%=i%>" width="165" height="113" border="0" class="oferta_img" alt="" /></a><%
-                                                                            }
-                                                                        }
-                                                                    %>            
+                                                                           %>            
 
                                                                     <% }
                                                                         }
@@ -378,128 +385,56 @@
                                                                     </div> 
 
                                                                 </div>
+                                                                <div class="center_title_bar">Search Results > <%=area%> > <%=name%></div>
 
+                                                                <%@include file="viewMoreDetails.jsp" %>
+                                                                <%  String sql;
 
-                                                                <div id="latest" class="center_title_bar">Latest Products</div>
-
-                                                                <%                          //find last raw id number of post table
-                                                                    int last_Raw = 18;
-                                                                    String iId;
-                                                                %>
-                                                                <%for (int i = last_Raw;
-                                                                    i > last_Raw - 1; i
-
-                                                                    
-                                                                        --) {%>
-                                                                <%  String heading, price;
-                                                                    String sql3 = "SELECT name,price,post_id FROM post ORDER BY post_id DESC LIMIT 3";
-                                                                %> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(sql3);
-                                                                    while (resultSet.next()) {
-                                                                        heading = resultSet.getString("name");
-                                                                        price = resultSet.getString("price");
-                                                                        iId = resultSet.getString("post_id");
-                                                                %>    
-                                                                <div class="prod_box">
-                                                                    <div class="center_prod_box">
-
-                                                                        <div class="product_title"><a href="viewDetails.jsp?value=<%=iId%>"><%=heading%></a></div>
-                                                                        <div class="product_img"><a href="viewDetails.jsp?value=<%=iId%>"> <img src="getImage.jsp?id=<%=iId%>"  width="80px" height="70px" alt="" border="0" class="oferta_img1" /> </a>  </div>
-
-                                                                        <div class="prod_price"><span class="reduce">350$</span> <span class="price"><%=price%></span></div>
-
-                                                                    </div>
-                                                                    <div class="prod_details_tab"> <a href="#" class="prod_buy">Change To</a> <a href="#" class="prod_details">Details</a> </div>
-                                                                </div>
-
-                                                                <%}
-                                                                    }%>
-
-
-
-                                                                <div class="center_title_bar">All Products</div>
-
-
-
-                                                                <%  try {
-                                                                        String heading1, price1, iId1;
-                                                                        String sql1 = "SELECT name,price,post_id FROM post ORDER BY post_id ASC LIMIT 3";
-                                                                %> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(sql1);
-                                                                    while (resultSet.next()) {
-                                                                        heading1 = resultSet.getString("name");
-                                                                        price1 = resultSet.getString("price");
-                                                                        iId1 = resultSet.getString("post_id");
-                                                                %>    
-                                                                <div class="prod_box">
-                                                                    <div class="center_prod_box">
-
-                                                                        <div class="product_title"><a href="viewDetails.jsp?value=<%=iId1%>"><%=heading1%></a></div>
-                                                                        <div class="product_img"><a href="viewDetails.jsp?value=<%=iId1%>"> <img src="getImage.jsp?id=<%=iId1%>"  width="80px" height="70px" alt="" border="0" class="oferta_img1" /> </a>  </div>
-
-                                                                        <div class="prod_price"><span class="reduce">350$</span> <span class="price"><%=price1%></span></div>
-
-                                                                    </div>
-                                                                    <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-                                                                </div>
-
-                                                                <%}
+                                                                    if (name.equals ( 
+                                                                        "all")) {
+                                                                        sql = "SELECT * FROM post";
                                                                     }
-                                                                    catch (Exception e
 
-                                                                    
-                                                                    
-                                                                    ) {
-
+                                                                    else if (area.equals ( 
+                                                                        "all")) {
+                                                                        sql = "SELECT * FROM post where category=" + "'" + name + "'";
                                                                     }
-                                                                %>
 
+                        
+                                                                        else {
+                                                                        sql = "SELECT * FROM post where area=" + "'" + area + "'" + "and category=" + "'" + name + "'";
+                                                                    }
+                                                                    //sql = "SELECT * FROM post where category=" + "'" + name + "'";
+                                                                    resultSet  = statement.executeQuery(sql);
 
-                                                                <div class="center_title_bar">Recomended Products</div>
-
+                        while (resultSet.next () 
+                            ) {%>
+                                                                <%=id = resultSet.getString("post_id")%>
+                                                                <%a = Integer.parseInt(id);%>
                                                                 <div class="prod_box">
                                                                     <div class="center_prod_box">
 
                                                                         <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-                                                                        <%for (int i = 8;
-                                                                            i< 9; i
-
-                                                                            
-                                                                                ++) {%>
-                                                                        <div class="product_img"><a href="specialProductDetails.jsp?value=<%=i%>"> <img src="getImage.jsp?id=<%=i%>"  width="80px" height="70px" alt="" border="0" class="oferta_img1" /> </a>  </div>
+                                                                        <%for (int i = a; i < a + 1; i++) {%>
+                                                                        <div class="product_img"><a href="viewDetails.jsp?value=<%=i%>"> <img src="getImage.jsp?id=<%=i%>"  width="80px" height="70px" alt="" border="0" class="oferta_img1" /> </a>  </div>
                                                                         <%}%>
                                                                         <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
                                                                     </div>
                                                                     <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
                                                                 </div>
-                                                                <div class="prod_box">
-                                                                    <div class="center_prod_box">
 
-                                                                        <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-                                                                        <%for (int i = 9;
-                                                                            i< 10; i
 
-                                                                            
-                                                                                ++) {%>
-                                                                        <div class="product_img"><a href="viewDetails.jsp?value=<%=i%>"> <img src="getImage.jsp?id=<%=i%>"  width="80px" height="70px" alt="" border="0" class="" /> </a>  </div>
-                                                                        <%}%>
-                                                                        <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-                                                                    </div>
-                                                                    <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-                                                                </div>
-                                                                <div class="prod_box">
-                                                                    <div class="center_prod_box">
+                                                                <%}%>
 
-                                                                        <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-                                                                        <%for (int i = 10;
-                                                                            i< 11; i
 
-                                                                            
-                                                                                ++) {%>
-                                                                        <div class="product_img"><a href="specialProductDetails.jsp?value=<%=i%>"> <img src="getImage.jsp?id=<%=i%>"  width="80px" height="70px" alt="" border="0" class="" /> </a>  </div>
-                                                                        <%}%>
-                                                                        <div class="prod_price"><span class="reduce">Rs 1,000</span> <span class="price">Rs 500</span></div>
-                                                                    </div>
-                                                                    <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a>  <a href="#" class="prod_details">Details</a> </div>
-                                                                </div>
+
+
+
+
+
+
+
+
 
                                                             </div>
                                                             <!-- end of center content -->

@@ -18,10 +18,10 @@
     <body>
         <h1>Hello World!</h1>
         <%
-            String name = request.getParameter("name_us");
+            String name = request.getParameter("uname");
             String email = request.getParameter("emauil_us");
-            String pass = request.getParameter("pass_us");
-            String a3 = request.getParameter("conf_pass_us");
+            String pass = request.getParameter("psw");
+            String a3 = request.getParameter("psw1");
            
             //  out.print(a3);
           

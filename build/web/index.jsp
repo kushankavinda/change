@@ -182,7 +182,7 @@
                             background: #E74B37;
                         }
                     </style>
-                     </head>
+                    </head>
                     <body>
 
                         <div id="main_container">
@@ -209,7 +209,7 @@
                                                         </div>
 
                                                         <div class="container" style="background-color:#f1f1f1">
-                                                        </b></label>   <a href="register.jsp"><button type="button" class="cancelbtn">Create Account</button></a>
+                                                            </b></label>   <a href="register.jsp"><button type="button" class="cancelbtn">Create Account</button></a>
                                                             <span class="psw">Forgot <a href="#">password?</a></span>
                                                         </div>
                                                         </form>
@@ -265,11 +265,11 @@
                                                                         <% } else {%>
                                                                     <li class="divider"></li>
                                                                     <li style="float:right;margin-right: 20px;margin-top: 0"> <div class="title_box" id="myLoginBtn" style="color:red">Sign Up</div></li>
-                                                          
 
 
-                                                              
-                                                                    
+
+
+
                                                                     <%}%>
                                                                     <%/*String ad=session.getAttribute("email").toString();
                                                                       String pass=session.getAttribute("password").toString();
@@ -303,10 +303,10 @@
                                                                 </ul>
                                                                 <div class="title_box">Special Products</div>
                                                                 <%try{String s = "SELECT * FROM admimnaddtable";
-%> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(s);
-                                String a = null;
-                                while (resultSet.next()) {
-                                    a = resultSet.getString("post_id");%>
+                                                                %> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(s);
+    String a = null;
+    while (resultSet.next()) {
+        a = resultSet.getString("post_id");%>
 
                                                                 <div class="border_box">
                                                                     <div class="product_title"><a href="viewDetails2.jsp?value=<%=a%>"><%=resultSet.getString("name")%></a></div>
@@ -315,10 +315,6 @@
                                                                     <%}
                                                                         }
                                                                         catch(Exception e
-
-                                                                        
-                                                                        
-
                                                                         
                                                                             ){} %>
                                                                 </div>
@@ -341,17 +337,17 @@
                                                                             String sql = "SELECT MAX(CONVERT(approved_id,UNSIGNED)) as approved_id  FROM approvedspecialadds";
                                                                             String sqlMin = "SELECT MIN(CONVERT(approved_id,UNSIGNED)) as approved_id  FROM approvedspecialadds";
                                                                             //String sql                             = "SELECT * FROM approvedSpecialadds";
-%> <%@include file="viewMoreDetails.jsp"%> <%                                      resultSet = statement.executeQuery(sql);
-                                while (resultSet.next()) {
-                                    appro = Integer.parseInt(resultSet.getString("approved_id"));
-                                }
-                                //out.println(appro);
-                                //select min approved_id from approvedspecialadds
-                                resultSet = statement.executeQuery(sqlMin);
-                                while (resultSet.next()) {
-                                    approMin = Integer.parseInt(resultSet.getString("approved_id"));
-                                }
-                                // out.println(approMin);
+                                                                    %> <%@include file="viewMoreDetails.jsp"%> <%                                      resultSet = statement.executeQuery(sql);
+    while (resultSet.next()) {
+        appro = Integer.parseInt(resultSet.getString("approved_id"));
+    }
+    //out.println(appro);
+    //select min approved_id from approvedspecialadds
+    resultSet = statement.executeQuery(sqlMin);
+    while (resultSet.next()) {
+        approMin = Integer.parseInt(resultSet.getString("approved_id"));
+    }
+    // out.println(approMin);
                                                                     %>
                                                                     <% for (int i = 8; i < appro + 1; i++) {
                                                                             String sqlNew = "SELECT * FROM specialproduct";
@@ -512,15 +508,15 @@
                                                                 <div class="border_box">
 
 
-                                                                   <form action="search.jsp" method="post" style="height:100%">
-                                                                       <input  type="text" name="searchWord"  placeholder="search here" style="height:50%" />
-                                                                       <input style="height:50%" type="submit"  style="height:10px;font-size: 20px"/>
+                                                                    <form action="search.jsp" method="post" style="height:100%">
+                                                                        <input  type="text" name="searchWord"  placeholder="search here" style="height:50%" />
+                                                                        <input style="height:50%" type="submit"  style="height:10px;font-size: 20px"/>
                                                                     </form>  
-                                                                   
+
 
 
                                                                 </div>
-                                                           
+
                                                                 <div class="title_box">Areas</div>
                                                                 <ul class="left_menu">
 
@@ -542,7 +538,7 @@
                                                         <!-- end of main content -->
 
                                                         <div class="footer">
-                                                            
+
                                                             <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="35"/> </div>
                                                             <div class="center_footer"> sureson.lk<br /> </div>
                                                             <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a> <a href="#">contact us</a> </div>

@@ -29,10 +29,10 @@
     </head>
     <body>
         <%
-            String a = request.getParameter("name_us");
+            String a = request.getParameter("uname");
             String a1 = request.getParameter("emauil_us");
-            String a2 = request.getParameter("pass_us");
-            String a3 = request.getParameter("conf_pass_us");
+            String a2 = request.getParameter("psw");
+            String a3 = request.getParameter("psw1");
 
         /*   if (!a2.equals(a3)) {
                 response.sendRedirect("newSignUp.jsp");
@@ -76,7 +76,7 @@
                     // out.print("insert user register");
                 } else {
                     out.print("not insert ");
-                    String redirectURL2 = "signup.jsp";
+                    String redirectURL2 = "register.jsp";
                     response.sendRedirect(redirectURL2);
 
                 } 

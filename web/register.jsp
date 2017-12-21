@@ -303,10 +303,10 @@
                                                                 </ul>
                                                                 <div class="title_box">Special Products</div>
                                                                 <%try{String s = "SELECT * FROM admimnaddtable";
-%> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(s);
-                                                                    String a = null;
-                                                                    while (resultSet.next()) {
-                                                                        a = resultSet.getString("post_id");%>
+                                                                %> <%@include file="viewMoreDetails.jsp"%> <%                        resultSet = statement.executeQuery(s);
+    String a = null;
+    while (resultSet.next()) {
+        a = resultSet.getString("post_id");%>
 
                                                                 <div class="border_box">
                                                                     <div class="product_title"><a href="viewDetails2.jsp?value=<%=a%>"><%=resultSet.getString("name")%></a></div>
@@ -331,153 +331,156 @@
 
                                                                 <div class="" style="width : 100%">
 
-                                                                    <form action="#">
+                                                                    <form action="addRegisterUser.jsp">
                                                                         <div class="container" style="width : 100%">
                                                                             <label><b>Username</b></label>
                                                                             <input type="text" placeholder="Enter Username" name="uname" required>
-                                                                                <label><b>Phone Number</b></label>
-                                                                                <input type="text" placeholder="Enter Phone Number" name="phone" required>
+                                                                                <label><b>Email</b></label>
+                                                                                <input type="text" placeholder="Enter email" name="emauil_us" required>
 
-                                                                                    <label><b>Password</b></label>
-                                                                                    <input type="password" placeholder="Enter Password" name="psw" required>
-                                                                                        <label><b>Confirm Password</b></label>
-                                                                                        <input type="password" placeholder="Enter Password" name="psw1" required>
+                                                                                    <label><b>Phone Number</b></label>
+                                                                                    <input type="text" placeholder="Enter Phone Number" name="phone" required>
 
-                                                                                            <button type="submit">Register</button>
-                                                                                            <input type="checkbox" checked="checked"> Remember me
-                                                                                                </div>
+                                                                                        <label><b>Password</b></label>
+                                                                                        <input type="password" placeholder="Enter Password" name="psw" required>
+                                                                                            <label><b>Confirm Password</b></label>
+                                                                                            <input type="password" placeholder="Enter Password" name="psw1" required>
 
-                                                                                                
-                                                                                                </form>
-
-
-                                                                                                <a href="#"><button class="loginBtn loginBtn--facebook">
-                                                                                                        Login with Facebook
-                                                                                                    </button></a>
-
-                                                                                                <button class="loginBtn loginBtn--google">
-                                                                                                    Login with Google
-                                                                                                </button>
-
-                                                                                                </div>
+                                                                                                <button type="submit">Register</button>
+                                                                                                <input type="checkbox" checked="checked"> Remember me
+                                                                                                    </div>
 
 
-                                                                                                </div>
-                                                                                                <!-- end of center content -->
-                                                                                                <div class="right_content">
-                                                                                                    <div class="title_box">Search</div>
-                                                                                                    <div class="border_box">
+                                                                                                    </form>
 
 
-                                                                                                        <form action="search.jsp" method="post" style="height:100%">
-                                                                                                            <input  type="text" name="searchWord"  placeholder="search here" style="height:50%" />
-                                                                                                            <input style="height:50%" type="submit"  style="height:10px;font-size: 20px"/>
-                                                                                                        </form>  
+                                                                                                    <a href="#"><button class="loginBtn loginBtn--facebook">
+                                                                                                            Login with Facebook
+                                                                                                        </button></a>
 
-
+                                                                                                    <button class="loginBtn loginBtn--google">
+                                                                                                        Login with Google
+                                                                                                    </button>
 
                                                                                                     </div>
 
-                                                                                                    <div class="title_box">Areas</div>
-                                                                                                    <ul class="left_menu">
 
-                                                                                                        <li class="even"><a href="viewArea.jsp?area=western">Western Province</a></li>
-                                                                                                        <li class="odd"><a href="viewArea.jsp?area=southern">Southren Province</a></li>
+                                                                                                    </div>
+                                                                                                    <!-- end of center content -->
+                                                                                                    <div class="right_content">
+                                                                                                        <div class="title_box">Search</div>
+                                                                                                        <div class="border_box">
 
-                                                                                                        <li class="even"><a href="#">North Wesaten Province</a></li>
-                                                                                                        <li class="odd"><a href="#">Nortyh Province</a></li>
-                                                                                                        <li class="even"><a href="#">other province</a></li>
-                                                                                                        <li class="odd"><a href="#">other province</a></li>
-                                                                                                        <li class="even"><a href="#">other province</a></li>
-                                                                                                        <li class="odd"><a href="#">Central Province</a></li>
-                                                                                                        <li class="even"><a href="#">other province</a></li>
-                                                                                                    </ul>
-                                                                                                    <div class="banner_adds"> <a href="addPost.jsp"><img src="images/putadd.jpg" alt="no banner" width="160" height="224" border="0" /></a> </div><!-- theere is call to advertise image also-->
-                                                                                                </div>
-                                                                                                <!-- end of right content -->
-                                                                                                </div>
-                                                                                                <!-- end of main content -->
 
-                                                                                                <div class="footer">
+                                                                                                            <form action="search.jsp" method="post" style="height:100%">
+                                                                                                                <input  type="text" name="searchWord"  placeholder="search here" style="height:50%" />
+                                                                                                                <input style="height:50%" type="submit"  style="height:10px;font-size: 20px"/>
+                                                                                                            </form>  
 
-                                                                                                    <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="35"/> </div>
-                                                                                                    <div class="center_footer"> sureson.lk<br /> </div>
-                                                                                                    <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a> <a href="#">contact us</a> </div>
-                                                                                                </div>
-                                                                                                </div>
-                                                                                                <!-- end of main_container -->
-                                                                                                <script>
-                                                                                                    // var myIndex1 = 0;
-                                                                                                    var myIndex = 0;
-                                                                                                    carousel();
-                                                                                                    function carousel() {
-                                                                                                        var i;
-                                                                                                        var x = document.getElementsByClassName("oferta_img");
-                                                                                                        for (i = 0; i < x.length; i++) {
-                                                                                                            x[i].style.display = "none";
+
+
+                                                                                                        </div>
+
+                                                                                                        <div class="title_box">Areas</div>
+                                                                                                        <ul class="left_menu">
+
+                                                                                                            <li class="even"><a href="viewArea.jsp?area=western">Western Province</a></li>
+                                                                                                            <li class="odd"><a href="viewArea.jsp?area=southern">Southren Province</a></li>
+
+                                                                                                            <li class="even"><a href="#">North Wesaten Province</a></li>
+                                                                                                            <li class="odd"><a href="#">Nortyh Province</a></li>
+                                                                                                            <li class="even"><a href="#">other province</a></li>
+                                                                                                            <li class="odd"><a href="#">other province</a></li>
+                                                                                                            <li class="even"><a href="#">other province</a></li>
+                                                                                                            <li class="odd"><a href="#">Central Province</a></li>
+                                                                                                            <li class="even"><a href="#">other province</a></li>
+                                                                                                        </ul>
+                                                                                                        <div class="banner_adds"> <a href="addPost.jsp"><img src="images/putadd.jpg" alt="no banner" width="160" height="224" border="0" /></a> </div><!-- theere is call to advertise image also-->
+                                                                                                    </div>
+                                                                                                    <!-- end of right content -->
+                                                                                                    </div>
+                                                                                                    <!-- end of main content -->
+
+                                                                                                    <div class="footer">
+
+                                                                                                        <div class="left_footer"> <img src="images/logo.png" alt="" width="89" height="35"/> </div>
+                                                                                                        <div class="center_footer"> sureson.lk<br /> </div>
+                                                                                                        <div class="right_footer"> <a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a> <a href="#">contact us</a> </div>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                    <!-- end of main_container -->
+                                                                                                    <script>
+                                                                                                        // var myIndex1 = 0;
+                                                                                                        var myIndex = 0;
+                                                                                                        carousel();
+                                                                                                        function carousel() {
+                                                                                                            var i;
+                                                                                                            var x = document.getElementsByClassName("oferta_img");
+                                                                                                            for (i = 0; i < x.length; i++) {
+                                                                                                                x[i].style.display = "none";
+                                                                                                            }
+                                                                                                            myIndex++;
+                                                                                                            if (myIndex > x.length) {
+                                                                                                                myIndex = 1
+                                                                                                            }
+                                                                                                            x[myIndex - 1].style.display = "block";
+                                                                                                            setTimeout(carousel, 1500); // Change image every 2 seconds
+                                                                                                            //next
+
                                                                                                         }
-                                                                                                        myIndex++;
-                                                                                                        if (myIndex > x.length) {
-                                                                                                            myIndex = 1
+
+                                                                                                        //next script
+                                                                                                        /*    var myIndex1 = 0;
+                                                                                                         carousel1();
+                                                                                                         
+                                                                                                         function carousel1() {
+                                                                                                         var i1;
+                                                                                                         var x1 = document.getElementsByClassName("oferta_img1");
+                                                                                                         for (i1 = 0; i1 < x1.length; i1++) {
+                                                                                                         x1[i1].style.display = "none";
+                                                                                                         }
+                                                                                                         myIndex1++;
+                                                                                                         if (myIndex1 > x1.length) {
+                                                                                                         myIndex1 = 1
+                                                                                                         }
+                                                                                                         x[myIndex1 - 1].style.display = "block";
+                                                                                                         setTimeout(carousel1, 1000); // Change image every 2 seconds
+                                                                                                         } */
+
+
+                                                                                                    </script>
+
+
+                                                                                                    <script>
+                                                                                                        // Get the modal
+                                                                                                        var modal = document.getElementById('myModal');
+
+                                                                                                        // Get the button that opens the modal
+                                                                                                        var btn = document.getElementById("myLoginBtn");
+
+                                                                                                        // Get the <span> element that closes the modal
+                                                                                                        var span = document.getElementsByClassName("close")[0];
+
+                                                                                                        // When the user clicks the button, open the modal 
+                                                                                                        btn.onclick = function () {
+                                                                                                            modal.style.display = "block";
                                                                                                         }
-                                                                                                        x[myIndex - 1].style.display = "block";
-                                                                                                        setTimeout(carousel, 1500); // Change image every 2 seconds
-                                                                                                        //next
 
-                                                                                                    }
-
-                                                                                                    //next script
-                                                                                                    /*    var myIndex1 = 0;
-                                                                                                     carousel1();
-                                                                                                 
-                                                                                                     function carousel1() {
-                                                                                                     var i1;
-                                                                                                     var x1 = document.getElementsByClassName("oferta_img1");
-                                                                                                     for (i1 = 0; i1 < x1.length; i1++) {
-                                                                                                     x1[i1].style.display = "none";
-                                                                                                     }
-                                                                                                     myIndex1++;
-                                                                                                     if (myIndex1 > x1.length) {
-                                                                                                     myIndex1 = 1
-                                                                                                     }
-                                                                                                     x[myIndex1 - 1].style.display = "block";
-                                                                                                     setTimeout(carousel1, 1000); // Change image every 2 seconds
-                                                                                                     } */
-
-
-                                                                                                </script>
-
-
-                                                                                                <script>
-                                                                                                    // Get the modal
-                                                                                                    var modal = document.getElementById('myModal');
-
-                                                                                                    // Get the button that opens the modal
-                                                                                                    var btn = document.getElementById("myLoginBtn");
-
-                                                                                                    // Get the <span> element that closes the modal
-                                                                                                    var span = document.getElementsByClassName("close")[0];
-
-                                                                                                    // When the user clicks the button, open the modal 
-                                                                                                    btn.onclick = function () {
-                                                                                                        modal.style.display = "block";
-                                                                                                    }
-
-                                                                                                    // When the user clicks on <span> (x), close the modal
-                                                                                                    span.onclick = function () {
-                                                                                                        modal.style.display = "none";
-                                                                                                    }
-
-                                                                                                    // When the user clicks anywhere outside of the modal, close it
-                                                                                                    window.onclick = function (event) {
-                                                                                                        if (event.target == modal) {
+                                                                                                        // When the user clicks on <span> (x), close the modal
+                                                                                                        span.onclick = function () {
                                                                                                             modal.style.display = "none";
                                                                                                         }
-                                                                                                    }
-                                                                                                </script>
-                                                                                                <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-                                                                                                <script  src="js/index1.js"></script>
+                                                                                                        // When the user clicks anywhere outside of the modal, close it
+                                                                                                        window.onclick = function (event) {
+                                                                                                            if (event.target == modal) {
+                                                                                                                modal.style.display = "none";
+                                                                                                            }
+                                                                                                        }
+                                                                                                    </script>
+                                                                                                    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-                                                                                                </body>
-                                                                                                </html>
+                                                                                                    <script  src="js/index1.js"></script>
+
+                                                                                                    </body>
+                                                                                                    </html>
